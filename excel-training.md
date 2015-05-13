@@ -4,6 +4,7 @@ This training course is designed for incoming interns, but can serve as a handy 
 
 ## Table of Contents
 
+* What's the Goal of This Guide?
 * Organizing Messy Data
   * Text-to-columns to Separate Conjoined Values
   * Number Formats to Enhance Presentation and Prevent Weird Errors
@@ -22,6 +23,18 @@ This training course is designed for incoming interns, but can serve as a handy 
   * [XLSX](#xlsx)
   * [CSV](#csv)
 
+## What's the Goal of This Guide?
+
+People come to the Tax Foundation with all sorts of backgrounds and varying levels of experience. Not everyone is an Excel whiz. This guide is meant to go over the most commonly used Excel features for managing the datasets we work with.
+
+### There is a Wrong Way and a Right Way to Excel
+
+![An inexperienced Excel user.](/images/excel-wrong.gif)
+
+There are many ways to complete tasks in Excel, but some are better than others. Many tasks can be done through monotonous repetition. However, choosing this path wastes your time and crushes your soul. It's much better to invest some time upfront to learn about Excel features that will speed up your work and automate repetitive tasks.
+
+![An experienced Excel user.](/images/excel-right.gif)
+
 ## <a id="pivot-tables"></a> PivotTables to Summarize and Organize Data
 
 PivotTables are a very cool Excel feature that allows you to create summary tables of your data. For example, let's say you have a dataset that lists tax collections at the county level and you want to know the sum of collections at the state level. You could devise a series of formulas to get this information, but it's much easier to quickly build a PivotTable. Let's dig into it!
@@ -38,7 +51,9 @@ PivotTables are a very cool Excel feature that allows you to create summary tabl
 
 A blank PivotTable isn't much help. You need to select which fields you want to summarize and how. In our example of summarizing count tax collections by state, we want to choose state for our rows and the taxes as our values. We can easily drag our chosen fields into the sections we want them using the PivotTable pane.
 
-By default, the number in Values will be a count summary. We don't need to know how many counties are in each state! We select the Value and choose `Value Field Settings...` to change from `Count` to `Sum`. We also change the number format to `Currency`, since we know we're working with dollar values.
+By default, the number in Values will be a count summary. We don't need to know how many counties are in each state! For our example, we select the Value and choose `Value Field Settings...` to change from `Count` to `Sum`. We also change the number format to `Currency`, since we know we're working with dollar values.
+
+There are many ways to summarize and format data values, and the correct one will vary from project to project. Don't be afraid to play around with it and see what you can do!
 
 ![Choosing What the PivotTable Displays](/images/choose-pivot-values.gif)
 
@@ -74,6 +89,6 @@ id,value,percent
 
 #### Saving As CSV
 
-In Excel, go to `File > Save As` and choose `Comma Delimitted (CSV)` as the file type.
+In Excel, go to `File > Save As` and choose `CSV (Comma Delimitted)` as the file type.
 
 Because saving as CSV means losing all of the special Excel magic in the file, Excel will warn you about saving CSVs every single time. Be patient, and tell it, yes, you really, truly do want to save as CSV.
