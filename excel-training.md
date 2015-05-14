@@ -12,8 +12,8 @@ This training course is designed for incoming interns, but can serve as a handy 
   * Transposition to Flip Everything Around
 * Using Basic Formulas
   * Add, Subtract, Multiply, Divide
-* Using Advanced Formulas
-  * Using VLOOKUP to Match Data from Different Tables
+* [Using Advanced Formulas](#advanced-formulas)
+  * [Using VLOOKUP to Match Data from Different Tables](#vlookup)
   * Using IF to Conditionally Generate Data
 * [PivotTables to Summarize and Organize Data](#pivot-tables)
   * [Create Your First PivotTable](#first-pivot-table)
@@ -35,7 +35,42 @@ There are many ways to complete tasks in Excel, but some are better than others.
 
 ![An experienced Excel user.](/images/excel-right.gif)
 
-## <a id="pivot-tables"></a> PivotTables to Summarize and Organize Data
+## <a id="advanced-formulas"></a>Using Advanced Formulas
+
+Now that you've got the easy bits under your belt, let's make some *really* interesting formulas! Excel formulas allow for a lot of programmatic logic to make [data munging](https://en.wikipedia.org/wiki/Data_wrangling) much easier. Let's look at some of the most useful formulas.
+
+### <a id="vlookup"></a>Using VLOOKUP to Match Data from Different Tables
+
+**VLOOKUP** is a useful function for finding a value from one table based on a value in another table.
+
+For example, let's say you have a table of state-level data where the states are identified by [FIPS code](https://www.census.gov/geo/reference/ansi_statetables.html). You want the data to be identified by the full state name instead. Luckily, you've got a table that matches FIPS codes to full state names. Should you use that table as a reference, manually replacing FIPS codes in your data set with state names? No, never! We'll use VLOOKUP to to match the full state name to the FIPS code.
+
+#### Example Data
+
+![On the left, state-level data by FIPS code. On the right, state names by FIPS code.](/images/vlookup-data.png)
+
+#### Writing Your VLOOKUP
+
+The VLOOKUP formula has four parts:
+
+1. A reference to the cell whose value you're looking to match.
+2. A reference to the table you're matching that cell against.
+3. The column number you want to retrieve from that table.
+4. Whether or not a close, but not exact, match is acceptable. (Hint: This should always be set to FALSE for our purposes.)
+
+The final formula in our example might look like this:
+
+![VLOOKUP formula that gives us full state names for FIPS codes.](/images/vlookup-example.png)
+
+Some important things to note:
+
+* The first value is a relative cell reference to `A2`. When you copy this formula down through the column, it will automatically update to look for `A3`, `A4`, etc.
+* The second value is an absolute table reference. The `$` before the letter and number tell Excel to keep these values exactly the same when this formula is copied. This way, cells `C2:C51` will always be looking for values in the precise location of the reference table, `Sheet2!$A$2:$B$52`. If you don't make this reference absolute, you'll end up looking for the value in `C51` in a table of mostly empty cells!
+* Column numbers for part three begin at 1 and count up.
+
+![VLOOKUP Demonstration](/images/vlookup-demo.gif)
+
+## <a id="pivot-tables"></a>PivotTables to Summarize and Organize Data
 
 PivotTables are a very cool Excel feature that allows you to create summary tables of your data. For example, let's say you have a dataset that lists tax collections at the county level and you want to know the sum of collections at the state level. You could devise a series of formulas to get this information, but it's much easier to quickly build a PivotTable. Let's dig into it!
 
