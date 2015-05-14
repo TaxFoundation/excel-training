@@ -67,6 +67,8 @@ Some important things to note:
 * The first value is a relative cell reference to `A2`. When you copy this formula down through the column, it will automatically update to look for `A3`, `A4`, etc.
 * The second value is an absolute table reference. The `$` before the letter and number tell Excel to keep these values exactly the same when this formula is copied. This way, cells `C2:C51` will always be looking for values in the precise location of the reference table, `Sheet2!$A$2:$B$52`. If you don't make this reference absolute, you'll end up looking for the value in `C51` in a table of mostly empty cells!
 * Column numbers for part three begin at 1 and count up.
+* The values we're searching through in the second table are sorted in ascending order, and the value we're looking for is in the first column. This is necessary with VLOOKUP.
+* The data we want to modify does not include the District of Columbia, but the FIPS reference table does. It's OK if something in the reference table doesn't have a match in the table where we're using VLOOKUP. The opposite situation--a value in our data that doesn't exist in the reference table--will throw and error.
 
 ![VLOOKUP Demonstration](/images/vlookup-demo.gif)
 
