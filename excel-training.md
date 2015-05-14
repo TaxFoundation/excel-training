@@ -4,21 +4,21 @@ This training course is designed for incoming interns, but can serve as a handy 
 
 ## Table of Contents
 
-* What's the Goal of This Guide?
-* Organizing Messy Data
-  * Text-to-columns to Separate Conjoined Values
-  * Number Formats to Enhance Presentation and Prevent Weird Errors
-  * Advanced Sorting to Arrange Things How You Want Them
-  * Transposition to Flip Everything Around
-* Using Basic Formulas
-  * Add, Subtract, Multiply, Divide
-* [Using Advanced Formulas](#advanced-formulas)
-  * [Using VLOOKUP to Match Data from Different Tables](#vlookup)
-  * Using IF to Conditionally Generate Data
-* [PivotTables to Summarize and Organize Data](#pivot-tables)
-  * [Create Your First PivotTable](#first-pivot-table)
-  * [Choosing What Your PivotTable Displays](#choose-pivot-values)
-  * [Filtering by Criteria](#filter-pivot-table)
+* [What's the Goal of This Guide?](#what-s-the-goal-of-this-guide)
+* [Organizing Messy Data](#organizing-messy-data)
+  * [Text-to-columns to Separate Conjoined Values](#text-to-columns-to-separate-conjoined-values)
+  * [Number Formats to Enhance Presentation and Prevent Weird Errors](#number-formats-to-enhance-presentation-and-prevent-weird-errors)
+  * [Advanced Sorting to Arrange Things How You Want Them](#advanced-sorting-to-arrange-things-how-you-want)
+  * [Transposition to Flip Everything Around](#transposition-to-flip-everything-around)
+* [Using Basic Formulas](#using-basic-formulas)
+  * [Add, Subtract, Multiply, Divide](#add-subtract-multiply-divide)
+* [Using Advanced Formulas](#using-advanced-formulas)
+  * [Using VLOOKUP to Match Data from Different Tables](#using-vlookup-to-match-data-from-different-tables)
+  * [Using IF to Conditionally Generate Data](#using-if-statements-to-conditionally-generate-data)
+* [PivotTables to Summarize and Organize Data](#pivottables-to-summarize-and-organize-data)
+  * [Create Your First PivotTable](#create-your-first-pivottable)
+  * [Choosing What Your PivotTable Displays](#choosing-what-your-pivottable-displays)
+  * [Filtering by Criteria](#filtering-by-criteria)
 * [File > Save As](#file-save-as)
   * [XLSX](#xlsx)
   * [CSV](#csv)
@@ -35,11 +35,11 @@ There are many ways to complete tasks in Excel, but some are better than others.
 
 ![An experienced Excel user.](/images/excel-right.gif)
 
-## <a id="advanced-formulas"></a>Using Advanced Formulas
+## Using Advanced Formulas
 
 Now that you've got the easy bits under your belt, let's make some *really* interesting formulas! Excel formulas allow for a lot of programmatic logic to make [data munging](https://en.wikipedia.org/wiki/Data_wrangling) much easier. Let's look at some of the most useful formulas.
 
-### <a id="vlookup"></a>Using VLOOKUP to Match Data from Different Tables
+### Using VLOOKUP to Match Data from Different Tables
 
 **VLOOKUP** is a useful function for finding a value from one table based on a value in another table.
 
@@ -72,11 +72,13 @@ Some important things to note:
 
 ![VLOOKUP Demonstration](/images/vlookup-demo.gif)
 
-## <a id="pivot-tables"></a>PivotTables to Summarize and Organize Data
+## Using IF Statements to Conditionally Generate Data
+
+## PivotTables to Summarize and Organize Data
 
 PivotTables are a very cool Excel feature that allows you to create summary tables of your data. For example, let's say you have a dataset that lists tax collections at the county level and you want to know the sum of collections at the state level. You could devise a series of formulas to get this information, but it's much easier to quickly build a PivotTable. Let's dig into it!
 
-### <a id="first-pivot-table"></a>Create Your First PivotTable
+### Create Your First PivotTable
 
 1. Select all of the data you intend to summarize.
 2. Go to `Insert > Tables > PivotTable`
@@ -84,7 +86,7 @@ PivotTables are a very cool Excel feature that allows you to create summary tabl
 
 ![Creating a PivotTable](/images/create-pivot-table.gif)
 
-### <a id="choose-pivot-values"></a>Choosing What Your PivotTable Displays
+### Choosing What Your PivotTable Displays
 
 A blank PivotTable isn't much help. You need to select which fields you want to summarize and how. In our example of summarizing count tax collections by state, we want to choose state for our rows and the taxes as our values. We can easily drag our chosen fields into the sections we want them using the PivotTable pane.
 
@@ -94,23 +96,23 @@ There are many ways to summarize and format data values, and the correct one wil
 
 ![Choosing What the PivotTable Displays](/images/choose-pivot-values.gif)
 
-### <a id="filter-pivot-table"></a>Filtering by Criteria
+### Filtering by Criteria
 
 Sometimes you'll want to filter the PivotTable results. You can easily do this by dragging-and-dropping the field you want to filter by into `FILTERS` in the PivotTable pane. This will add the field to a list of filters above the PivotTable, where you can fine-tune the criteria to filter by.
 
 ![Filter by Criteria](/images/filter-pivot-table.gif)
 
-## <a id="file-save-as"></a>File > Save As
+## File > Save As
 
 Truthfully, you should've been saving your work as you went along! There's no telling when Excel might crash, destroying all of your hard work.
 
 But this section isn't just a reminder to save! Now that you've wrangled your data, you need to make sure it's in a ready-to-use file format. You'll typically be working with two formats: **Excel** and **CSV**. Here's what you need to know about each.
 
-### <a id="xlsx"></a>XLSX
+### XLSX
 
 The default file used by Excel is the **XLSX** file. This filetype is best for preserving constructs that help you clean your data, such as formulas and PivotTables. **Using XLSX is best while the data you're cleaning is a work-in-progress.**
 
-### <a id="csv"></a>CSV
+### CSV
 
 In almost all cases, you're saving the final file as a **comma separated values** file, or **CSV**. You will save the final CSV files separate from the WIP Excel files you used previously.
 
