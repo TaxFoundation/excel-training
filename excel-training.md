@@ -5,6 +5,7 @@ This training course is designed for incoming interns, but can serve as a handy 
 ## Table of Contents
 
 * [What's the Goal of This Guide?](#what-s-the-goal-of-this-guide)
+* [Getting to Know Excel](#getting-to-know-excel)
 * [Organizing Messy Data](#organizing-messy-data)
   * [Text-to-columns to Separate Conjoined Values](#text-to-columns-to-separate-conjoined-values)
   * [Number Formats to Enhance Presentation and Prevent Weird Errors](#number-formats-to-enhance-presentation-and-prevent-weird-errors)
@@ -34,6 +35,38 @@ People come to the Tax Foundation with all sorts of backgrounds and varying leve
 There are many ways to complete tasks in Excel, but some are better than others. Many tasks can be done through monotonous repetition. However, choosing this path wastes your time and crushes your soul. It's much better to invest some time upfront to learn about Excel features that will speed up your work and automate repetitive tasks.
 
 ![An experienced Excel user.](/images/excel-right.gif)
+
+## Getting to Know Excel
+
+First things first: let's learn how to make our way through Excel. All Excel spreadsheets are made of columns and rows, represented with letters and numbers respectively. The intersection of a column and row is a cell.
+
+You can select a single cell by clicking it. You can move your selection around with the arrow keys, page up/down, and home/end. Select multiple cells by clicking and dragging, or by holding `Shift` and you move your selection.
+
+To change the contents of a selected cell, just start typing. If you're entering a formula, be sure to start with `=`. When you're done editing a cell, hit `Enter` to accept and move down one cell, or `Tab` to accept and move right one cell. To delete the contents of a cell, just hit `Delete`.
+
+You can select and entire column or row by clicking on its letter or number respectively. To select everything, hit `Ctrl A`. To delete an entire column or row (not just empty the cells of data, but completely remove the cells), hit `Ctrl -`.
+
+![First things first!](/images/first-things.gif)
+
+## Organizing Messy Data
+
+When compiling data for analysis, you'll be drawing from many different sources. Each source has their own preferred way of formatting data. Data will be arranged differently, saved in different formats, or even (*gasp!*) saved as a PDF. Your first job will be to reform datasets into something you can use.
+
+### Text To Columns to Separate Conjoined Values
+
+Sometimes you'll get a dataset that's in an unusual text format. It may be a CSV file saved as a `.txt` file. Or maybe your data has a column for "County, State" and you want to separate them into "County" and "State". In these situations, Excel's Text to Columns features will be very useful.
+
+Let's work through the example of breaking out county and state names. You would select the entire column (click the letter for that column to select the whole thing), then go to `Data > Data Tools > Text to Columns`. A dialog box will pop up to walk you through this.
+
+First, you'll want to acknowledge that your data is [delimited](http://en.wikipedia.org/wiki/Delimiter-separated_values), which means that there is a uniform system for separating the units of data in your set. (Your data *could* be fixed width, but this isn't very likely.) This could be spaces, commas, tabs, pipes, or any other kind of delimiter. Go to the next screen and specify which delimiter your data uses. If it's something weird and custom, you can specify that with `Other`. On the final screen, you can preview the new columns you're about to create and specify data formats. When you're ready, click `Finish` to create your new columns.
+
+![Text to Columns Example](/images/text-to-columns.gif)
+
+The observant among you will say, "Wait a minute! Now every state name has a space in front of it!" Yes, you're correct! Let's fix that.
+
+You can quickly remove the leading spaces from data with the `TRIM` function. In the next column, trim the first state name and then copy that function all the way down. Then just copy that corrected column, paste the values over the original, and delete your unnecessary column.
+
+![Trim](/images/trim.gif)
 
 ## Using Advanced Formulas
 
