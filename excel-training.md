@@ -6,13 +6,13 @@ This training course is designed for incoming interns, but can serve as a handy 
 
 * [What's the Goal of This Guide?](#what-s-the-goal-of-this-guide)
 * [Getting to Know Excel](#getting-to-know-excel)
+* [Using Basic Formulas](#using-basic-formulas)
+  * [Relative and Absolute References](#relative-and-absolute-references)
 * [Organizing Messy Data](#organizing-messy-data)
-  * [Text-to-columns to Separate Conjoined Values](#text-to-columns-to-separate-conjoined-values)
+  * [Text to columns to Separate Conjoined Values](#text-to-columns-to-separate-conjoined-values)
   * [Number Formats to Enhance Presentation and Prevent Weird Errors](#number-formats-to-enhance-presentation-and-prevent-weird-errors)
   * [Advanced Sorting to Arrange Things How You Want Them](#advanced-sorting-to-arrange-things-how-you-want)
   * [Transposition to Flip Everything Around](#transposition-to-flip-everything-around)
-* [Using Basic Formulas](#using-basic-formulas)
-  * [Add, Subtract, Multiply, Divide](#add-subtract-multiply-divide)
 * [Using Advanced Formulas](#using-advanced-formulas)
   * [Using VLOOKUP to Match Data from Different Tables](#using-vlookup-to-match-data-from-different-tables)
   * [Using IF to Conditionally Generate Data](#using-if-statements-to-conditionally-generate-data)
@@ -48,6 +48,34 @@ You can select and entire column or row by clicking on its letter or number resp
 
 ![First things first!](/images/first-things.gif)
 
+## Using Basic Formulas
+
+[Once upon a time, spreadsheets were the most tedious thing in the world.](https://medium.com/backchannel/a-spreadsheet-way-of-knowledge-8de60af7146e) If you had rows and rows of data to add, you had to manually go through them and add the values. And if someone says, "Make a change to this data", you had to do it all again! Thankfully, Excel lets us write formulas that calculate for us and update based on changes to our data. Let's cover the basics.
+
+| Formula | What It Returns |
+| --- | --- |
+| `=SUM(Value1, Value2, ...)` or `=Value1+Value2+...` | Returns the sum of cells or ranges. |
+| `=Value1-Value2-...` | Returns the value of preceding cell or value minus the succeeding cell or value. |
+| `=Value1*Value2*...` | Returns the product of adjacent cells or values. |
+| `=Value1/Value2/...` | Returns the quotient of adjacent cells or values. |
+| `=AVERAGE(Values)` | Average of the values, cells, or ranges passed. |
+| `=MEDIAN(Values)` | Returns the median of the values, cells, or ranges passed. |
+| `=MAX(Values)` | Maximum value of the values, cells, or ranges passed. |
+| `=MIN(Values)` | Minimum value of the values, cells, or ranges passed. |
+| `=Value1&Value2` | Returns the concatenation of values, e.g., `="Fizz"&"Buzz"` returns "FizzBuzz". |
+
+### Relative and Absolute References
+
+To use the value of a given cell in a formula, you reference it with the letter and number of it's column and row. If I write  in cell C1 the formula `=SUM(A1, B1)`, I'm telling Excel to add the values in the cell at column A, row 1, and column B, row 1, and to display the result in C1.
+
+If you have many rows of values in columns A and B, you may want to sum all of them. It would be madness to rewrite the preceding formula in every row. This is where relative references come in. You can easily expand this formula by clicking and dragging the bottom-right corner of the selected cell. Or you can expand all the way down column C, until your rows stop, by double-clicking the botoom-right corner of the selected cell. When you do this, Excel knows to change `=SUM(A1, B1)` into `=SUM(A2, B2)`, `=SUM(A3, B3)`, etc.
+
+![Expanding formulas with relative cell references.](/images/expand-formula.gif)
+
+Excel's relative references make some tasks much easier, but can easily break others. Let's say you need to multiply every number in column A by the value of B1. With relative cell references, expanding your formula would fail. B1 would become B2, and the results wouldn't be what you wanted. To force Excel to use a specific, or *absolute*, cell, you can prefix the column or row with `$`. Excel will not automatically change the value after the `$` in a formula that is copied to other cells.
+
+![Using absolute cell references.](/images/absolute-reference.gif)
+
 ## Organizing Messy Data
 
 When compiling data for analysis, you'll be drawing from many different sources. Each source has their own preferred way of formatting data. Data will be arranged differently, saved in different formats, or even (*gasp!*) saved as a PDF. Your first job will be to reform datasets into something you can use.
@@ -67,6 +95,30 @@ The observant among you will say, "Wait a minute! Now every state name has a spa
 You can quickly remove the leading spaces from data with the `TRIM` function. In the next column, trim the first state name and then copy that function all the way down. Then just copy that corrected column, paste the values over the original, and delete your unnecessary column.
 
 ![Trim](/images/trim.gif)
+
+### Number Formats to Enhance Presentation and Prevent Weird Errors
+
+Excel includes a feature to format data according to commonly used conventions, such as currency, percentages, and dates. Sometimes these formats are handy, and sometimes they are maddening.
+
+The right format to use is dependent on your data and the context you will use it in. For example, you would format a summary data table in a blog post for human readability. But for performing calculations, that formatting would be unacceptable.
+
+#### Sample Blog Table
+
+| State | Dollars | Percents |
+|:--- | ---:| ---:|
+| Alabama | $326.04 | 14% |
+| Wyoming | $297.45 | 9% |
+
+#### Sample Raw Dataset
+
+```
+state,dollars,percents
+Alabama,326.04,0.14
+Wyoming,297.45,0.09
+```
+#### Warning
+
+Some formats can cause problems when saving the underlying data. For example, the default format is "General". Under General format, very large or very small numbers are sometimes displayed with scientific notation, e.g., 5.32 x 10<sup>7</sup>. [If you saved this file as a CSV](#file-save-as), you would unintentionally save the scientific notation rather than the underlying data! If someone used that CSV file to perform calculations, their program may not be able to correctly read the data. Always be careful to remove inappropriate formatting from final CSV files.
 
 ## Using Advanced Formulas
 
@@ -101,11 +153,23 @@ Some important things to note:
 * The second value is an absolute table reference. The `$` before the letter and number tell Excel to keep these values exactly the same when this formula is copied. This way, cells `C2:C51` will always be looking for values in the precise location of the reference table, `Sheet2!$A$2:$B$52`. If you don't make this reference absolute, you'll end up looking for the value in `C51` in a table of mostly empty cells!
 * Column numbers for part three begin at 1 and count up.
 * The values we're searching through in the second table are sorted in ascending order, and the value we're looking for is in the first column. This is necessary with VLOOKUP.
-* The data we want to modify does not include the District of Columbia, but the FIPS reference table does. It's OK if something in the reference table doesn't have a match in the table where we're using VLOOKUP. The opposite situation--a value in our data that doesn't exist in the reference table--will throw and error.
+* The data we want to modify does not include the District of Columbia, but the FIPS reference table does. It's OK if something in the reference table doesn't have a match in the table where we're using VLOOKUP. The opposite situation--a value in our data that doesn't exist in the reference table--will throw the `#N/A` error.
 
 ![VLOOKUP Demonstration](/images/vlookup-demo.gif)
 
 ## Using IF Statements to Conditionally Generate Data
+
+Using a formula like `IF` lets you introduce conditional logic into your data. Let's see an example:
+
+`=IF(A1 = "Super", "Duper", "Fail")`
+
+In the above example, the formula checks cell A1 for the string "Super". If A1 equals "Super", then the formula displays "Duper". Otherwise, it displays the string "Fail".
+
+Combining `IF` with `VLOOKUP` lets us do things like handle errors gracefully. As stated previously, if `VLOOKUP` doesn't find a match in the reference table, it will throw an error. Instead of seeing this error, we may want our dataset to use the string "No Data". To do this, we could write a function as follows:
+
+`=IF(ISNA(VLOOKUP(A1,Sheet2!A1:B3,2,FALSE),"No Data",VLOOKUP(A1,Sheet2!A1:B3,2,FALSE)))`
+
+This function would first see if the result of the `VLOOKUP` returns the `#N/A` error. If so, it returns the string "No Data". Otherwise, if the `VLOOKUP` is valid, it returns the result of the `VLOOKUP`.
 
 ## PivotTables to Summarize and Organize Data
 
