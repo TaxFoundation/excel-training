@@ -11,7 +11,7 @@ This training course is designed for incoming interns, but can serve as a handy 
 * [Organizing Messy Data](#organizing-messy-data)
   * [Text to columns to Separate Conjoined Values](#text-to-columns-to-separate-conjoined-values)
   * [Number Formats to Enhance Presentation and Prevent Weird Errors](#number-formats-to-enhance-presentation-and-prevent-weird-errors)
-  * [Advanced Sorting to Arrange Things How You Want Them](#advanced-sorting-to-arrange-things-how-you-want)
+  * [Advanced Sorting to Arrange Things How You Want Them](#advanced-sorting-to-arrange-things-how-you-want-them)
   * [Transposition to Flip Everything Around](#transposition-to-flip-everything-around)
 * [Using Advanced Formulas](#using-advanced-formulas)
   * [Using VLOOKUP to Match Data from Different Tables](#using-vlookup-to-match-data-from-different-tables)
@@ -20,7 +20,7 @@ This training course is designed for incoming interns, but can serve as a handy 
   * [Create Your First PivotTable](#create-your-first-pivottable)
   * [Choosing What Your PivotTable Displays](#choosing-what-your-pivottable-displays)
   * [Filtering by Criteria](#filtering-by-criteria)
-* [File > Save As](#file-save-as)
+* [File > Save As](#file--save-as)
   * [XLSX](#xlsx)
   * [CSV](#csv)
 
