@@ -38,7 +38,7 @@ There are many ways to complete tasks in Excel, but some are better than others.
 
 ## Getting to Know Excel
 
-First things first: let's learn how to make our way through Excel. All Excel spreadsheets are made of columns and rows, represented with letters and numbers respectively. The intersection of a column and row is a cell.
+First things first: let's learn how to find our way in Excel. All Excel spreadsheets are made of columns and rows, represented with letters and numbers respectively. The intersection of a column and row is a cell.
 
 You can select a single cell by clicking it. You can move your selection around with the arrow keys, page up/down, and home/end. Select multiple cells by clicking and dragging, or by holding `Shift` and you move your selection.
 
@@ -63,6 +63,13 @@ You can select and entire column or row by clicking on its letter or number resp
 | `=MAX(Values)` | Maximum value of the values, cells, or ranges passed. |
 | `=MIN(Values)` | Minimum value of the values, cells, or ranges passed. |
 | `=Value1&Value2` | Returns the concatenation of values, e.g., `="Fizz"&"Buzz"` returns "FizzBuzz". |
+
+There are four ways you might specify the values passed to an Excel function:
+
+* Include the value in the function, e.g., `=SUM(2, 2)` = 4
+* Pass cell references to the function, e.g., `=SUM(A1, B1)` = the sum of the values in cells A1 and B1.
+* Pass a cell range into the function, e.g., `=SUM(A1:A50)` = the sum of all numbers in column A, rows 1 through 50 inclusive.
+* Pass the results of another function into the function, e.g., `=SUM(AVERAGE(A1:A50),AVERAGE(B1:B50))` = the sum of the averages of columns A and B, rows 1 through 50 inclusive.
 
 ### Relative and Absolute References
 
@@ -119,6 +126,16 @@ Wyoming,297.45,0.09
 #### Warning
 
 Some formats can cause problems when saving the underlying data. For example, the default format is "General". Under General format, very large or very small numbers are sometimes displayed with scientific notation, e.g., 5.32 x 10<sup>7</sup>. [If you saved this file as a CSV](#file-save-as), you would unintentionally save the scientific notation rather than the underlying data! If someone used that CSV file to perform calculations, their program may not be able to correctly read the data. Always be careful to remove inappropriate formatting from final CSV files.
+
+### Advanced Sorting to Arrange Things How You Want Them
+
+The order your data comes in is now always the order it needs to be in. Sorting is pretty straightforward: select your data, then go to `Data > Sort and Filter > Sort`. Here you can define your custom sorts. Your can define multiple levels of sorting. For example, if you wanted to sort county-level tax collections alphabetically by state and then by tax collections large-to-small, you could add a first sorting level of state, sorted A to Z by values, and a second level of tax collections, sorted largest to smallest by values. There are many ways you may want to sort data, and it's worth playing around with it.
+
+![Basic Sorting](/images/sorting.gif)
+
+Sometimes you'll have data where the columns are arranged in a way you don't want. In this case, you can also custom sort columns as well as rows. To do this, select the columns you want to sort and, in the sort menu, choose `Options > Sort left to right`.
+
+![Sorting by Rows](/images/sort-by-row.gif)
 
 ## Using Advanced Formulas
 
