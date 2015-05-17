@@ -137,6 +137,16 @@ Sometimes you'll have data where the columns are arranged in a way you don't wan
 
 ![Sorting by Rows](/images/sort-by-row.gif)
 
+### Transposition to Flip Everything Around
+
+You may get a dataset where you need to swap, or *transpose* the axes. This is pretty easy:
+
+* Copy all of your data
+* Choose a location to paste the transposed data
+* Right-click into the desired first cell, choose `Paste Options > Transpose (T)`
+
+![Transposition example](/images/transpose.gif)
+
 ## Using Advanced Formulas
 
 Now that you've got the easy bits under your belt, let's make some *really* interesting formulas! Excel formulas allow for a lot of programmatic logic to make [data munging](https://en.wikipedia.org/wiki/Data_wrangling) much easier. Let's look at some of the most useful formulas.
