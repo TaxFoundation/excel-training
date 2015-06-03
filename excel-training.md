@@ -54,10 +54,10 @@ You can select and entire column or row by clicking on its letter or number resp
 
 | Formula | What It Returns |
 | --- | --- |
-| `=SUM(Value1, Value2, ...)` or `=Value1+Value2+...` | Returns the sum of cells or ranges. |
-| `=Value1-Value2-...` | Returns the value of preceding cell or value minus the succeeding cell or value. |
-| `=Value1*Value2*...` | Returns the product of adjacent cells or values. |
-| `=Value1/Value2/...` | Returns the quotient of adjacent cells or values. |
+| `=SUM(Value1, Value2, ...)` or `=Value1+Value2+...` | Returns the sum of cells, values, or ranges. |
+| `=Value1-Value2-...` | Returns the difference between cells or values. |
+| `=Value1*Value2*...` | Returns the product of cells or values. |
+| `=Value1/Value2/...` | Returns the quotient of cells or values. |
 | `=AVERAGE(Values)` | Average of the values, cells, or ranges passed. |
 | `=MEDIAN(Values)` | Returns the median of the values, cells, or ranges passed. |
 | `=MAX(Values)` | Maximum value of the values, cells, or ranges passed. |
