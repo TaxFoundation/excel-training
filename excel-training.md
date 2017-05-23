@@ -1,6 +1,6 @@
 # Tax Foundation Excel Bootcamp
 
-This training course is designed for incoming interns, but can serve as a handy refresher for any person looking to up their Microsoft Excel game. For more and deeper info, check out [Microsoft's Excel help center](https://support.office.com/en-us/excel).
+This training course is designed for incoming interns, but can serve as a handy refresher for any person looking to up their Microsoft Excel game. For more and deeper info, check out [Microsoft's Excel help center][excel-docs].
 
 ## Table of Contents
 
@@ -15,7 +15,7 @@ This training course is designed for incoming interns, but can serve as a handy 
   * [Transposition to Flip Everything Around](#transposition-to-flip-everything-around)
 * [Using Advanced Formulas](#using-advanced-formulas)
   * [Using VLOOKUP to Match Data from Different Tables](#using-vlookup-to-match-data-from-different-tables)
-  * [Using IF and Other Logical Functions to Compare and Generate Data](#using-if-and-other-logical-functions-to-compare-and-generate-data)
+  * [Using IF and Other Logical Functions to Compare Data](#using-if-and-other-logical-functions-to-compare-data)
 * [PivotTables to Summarize and Organize Data](#pivottables-to-summarize-and-organize-data)
   * [Create Your First PivotTable](#create-your-first-pivottable)
   * [Choosing What Your PivotTable Displays](#choosing-what-your-pivottable-displays)
@@ -50,7 +50,7 @@ You can select and entire column or row by clicking on its letter or number resp
 
 ## Using Basic Formulas and Functions
 
-[Once upon a time, spreadsheets were the most tedious thing in the world.](https://medium.com/backchannel/a-spreadsheet-way-of-knowledge-8de60af7146e) If you had rows and rows of data to add, you had to manually go through them and add the values. And if someone says, "Make a change to this data", you had to do it all again! Thankfully, Excel lets us write formulas that calculate for us and update based on changes to our data. Let's cover the basics.
+[Once upon a time, spreadsheets were the most tedious thing in the world.][tedium] If you had rows and rows of data to add, you had to manually go through them and add the values. And if someone says, "Make a change to this data", you had to do it all again! Thankfully, Excel lets us write formulas that calculate for us and update based on changes to our data. Let's cover the basics.
 
 | Formula | What It Returns |
 | --- | --- |
@@ -62,7 +62,8 @@ You can select and entire column or row by clicking on its letter or number resp
 | `=MEDIAN(Values)` | Returns the median of the values, cells, or ranges passed. |
 | `=MAX(Values)` | Maximum value of the values, cells, or ranges passed. |
 | `=MIN(Values)` | Minimum value of the values, cells, or ranges passed. |
-| `=COUNT(Values)` | Returns the number of cells that are numbers within the cell range given. E.g., if `A1` is 4 and `A2` is "potato" and `A3` is empty, then `=COUNT(A1:A3)` returns 1. Number as text, e.g., `"1"`, also count. |
+| `=COUNT(Values)` | Returns the number of cells that are numbers within the cell range given. E.g., if `A1` is 4 and `A2` is "potato" and `A3` is empty, then `=COUNT(A1:A3)` returns 1. Number as text, e.g., `"1"`, also count. [See documentation.][count] |
+| `=COUNTA(Values)` | Returns the number of cells in the range of values which aren't empty. [See documentation.][counta] |
 | `=Value1&Value2` | Returns the concatenation of values, e.g., `="Fizz"&"Buzz"` returns "FizzBuzz". |
 
 There are four ways you might specify the values passed to an Excel function:
@@ -94,7 +95,7 @@ Sometimes you'll get a dataset that's in an unusual text format. It may be a CSV
 
 Let's work through the example of breaking out county and state names. You would select the entire column (click the letter for that column to select the whole thing), then go to `Data > Data Tools > Text to Columns`. A dialog box will pop up to walk you through this.
 
-First, you'll want to acknowledge that your data is [delimited](http://en.wikipedia.org/wiki/Delimiter-separated_values), which means that there is a uniform system for separating the units of data in your set. (Your data *could* be fixed width, but this isn't very likely.) This could be spaces, commas, tabs, pipes, or any other kind of delimiter. Go to the next screen and specify which delimiter your data uses. If it's something weird and custom, you can specify that with `Other`. On the final screen, you can preview the new columns you're about to create and specify data formats. When you're ready, click `Finish` to create your new columns.
+First, you'll want to acknowledge that your data is [delimited][delimited], which means that there is a uniform system for separating the units of data in your set. (Your data *could* be fixed width, but this isn't very likely.) This could be spaces, commas, tabs, pipes, or any other kind of delimiter. Go to the next screen and specify which delimiter your data uses. If it's something weird and custom, you can specify that with `Other`. On the final screen, you can preview the new columns you're about to create and specify data formats. When you're ready, click `Finish` to create your new columns.
 
 ![Text to Columns Example](/images/text-to-columns.gif)
 
@@ -185,13 +186,13 @@ Some important things to note:
 
 ![VLOOKUP Demonstration](/images/vlookup-demo.gif)
 
-## Using IF and Other Logical Functions to Compare and Generate Data
+## Using IF and Other Logical Functions to Compare Data
 
-Excel has several [logical functions](https://support.office.com/en-us/article/Logical-functions-reference-e093c192-278b-43f6-8c3a-b6ce299931f5?ui=en-US&rs=en-US&ad=US) that let you compare values and return specific data depending on the result of the comparisons.
+Excel has several [logical functions][logical-functions] that let you compare values and return specific data depending on the result of the comparisons.
 
 ### IF Function
 
-Using a formula like `IF` lets you [introduce conditional logic into your data](https://support.office.com/en-us/article/IF-function-69aed7c9-4e8a-4755-a9bc-aa8bbff73be2). Let's see an example:
+Using a formula like [IF][if] lets you introduce conditional logic into your data. Let's see an example:
 
 `=IF(A1 = "Super", "Duper", "Fail")`
 
@@ -226,6 +227,35 @@ For example, with the given data:
 ### NOT
 
 The `NOT` function is an easy way to reverse a boolen (`TRUE` or `FALSE`) value. So `=NOT(TRUE)` evaluates to `FALSE`. Or `=NOT(AND(1>2, 2>0))` evaluates to `TRUE`.
+
+### COUNTIF, COUNTIFS, SUMIF, SUMIFS
+
+Excel has advanced `IF` functions for summing, counting, etc, based on single or multiple criteria. Among the most useful are [COUNTIF][countif], [COUNTIFS][countifs], [SUMIF][sumif], and [SUMIFS][sumifs].
+
+`COUNTIF` and `SUMIF` will perform `COUNT` or `SUM` on a range of data that meet a single criterion. For example.
+
+|     | `A`      | `B`      |
+| --- | -------- | -------- |
+| `1` | 321      | "banana" |
+| `2` | 12       | "kiwi"   |
+| `3` | 4        | "banana" |
+
+`=COUNTIF(B1:B3,"banana")` evaluates to `2`, the count of cells in the range equal to "banana".
+`=SUMIF(A1:A3,">10")` evaluates to `333`, the sum of `A1` and `A2` but not `A3` which was less than 10.
+`=SUMIF(B1:B3,"banana",A1:A3)` evaluates to `325`. The first range of cells is the range to check the criteria against, and the second range of cells is the range to add if the criteria is `TRUE`. So where the cell in `B1:B3` is "banana", `SUM` the cell in column `A` in the same row.
+
+`COUNTIFS` and `SUMIFS` are similar, but they accept multiple criteria. Example:
+
+|     | `A` | `B` | `C` |
+| --- | --- | --- | --- |
+| `1` | 11  | 92  | 501 |
+| `2` | 18  | 22  | 679 |
+| `3` | 12  | 42  | 342 |
+
+`=COUNTIFS(A1:A3,">15",B1:B3,">20")` evaluates to `1`, as only one row (row 2) satisfies both criteria.
+
+`=SUMIFS(A1:A3,B1:B3,">40",C1:C3,"<500")` evaluates to `12`, as only `A3` is summed because that's the only row meeting criteria (`B` greater than `40` and `C` less than `500`).
+
 
 ## PivotTables to Summarize and Organize Data
 
@@ -284,3 +314,15 @@ id,value,percent
 In Excel, go to `File > Save As` and choose `CSV (Comma Delimitted)` as the file type.
 
 Because saving as CSV means losing all of the special Excel magic in the file, Excel will warn you about saving CSVs every single time. Be patient, and tell it, yes, you really, truly do want to save as CSV.
+
+[excel-docs]: https://support.office.com/en-us/excel
+[tedium]: https://medium.com/backchannel/a-spreadsheet-way-of-knowledge-8de60af7146e
+[count]: https://support.office.com/en-us/article/COUNT-function-a59cd7fc-b623-4d93-87a4-d23bf411294c
+[counta]: https://support.office.com/en-us/article/COUNTA-function-7dc98875-d5c1-46f1-9a82-53f3219e2509?ui=en-US&rs=en-US&ad=US
+[delimited]: http://en.wikipedia.org/wiki/Delimiter-separated_values
+[logical-functions]: https://support.office.com/en-us/article/Logical-functions-reference-e093c192-278b-43f6-8c3a-b6ce299931f5?ui=en-US&rs=en-US&ad=US
+[if]: https://support.office.com/en-us/article/IF-function-69aed7c9-4e8a-4755-a9bc-aa8bbff73be2?ui=en-US&rs=en-US&ad=US
+[countif]: https://support.office.com/en-us/article/COUNTIF-function-e0de10c6-f885-4e71-abb4-1f464816df34?ui=en-US&rs=en-US&ad=US
+[countifs]: https://support.office.com/en-us/article/COUNTIFS-function-dda3dc6e-f74e-4aee-88bc-aa8c2a866842?ui=en-US&rs=en-US&ad=US
+[sumif]: https://support.office.com/en-us/article/SUMIF-function-169b8c99-c05c-4483-a712-1697a653039b?ui=en-US&rs=en-US&ad=US
+[sumifs]: https://support.office.com/en-us/article/SUMIFS-function-c9e748f5-7ea7-455d-9406-611cebce642b?ui=en-US&rs=en-US&ad=US
