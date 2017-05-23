@@ -30,11 +30,11 @@ People come to the Tax Foundation with all sorts of backgrounds and varying leve
 
 ### There is a Wrong Way and a Right Way to Excel
 
-![An inexperienced Excel user.](/images/excel-wrong.gif)
+![An inexperienced Excel user.](images/excel-wrong.gif)
 
 There are many ways to complete tasks in Excel, but some are better than others. Many tasks can be done through monotonous repetition. However, choosing this path wastes your time and crushes your soul. It's much better to invest some time upfront to learn about Excel features that will speed up your work and automate repetitive tasks.
 
-![An experienced Excel user.](/images/excel-right.gif)
+![An experienced Excel user.](images/excel-right.gif)
 
 ## Getting to Know Excel
 
@@ -46,7 +46,7 @@ To change the contents of a selected cell, just start typing. If you're entering
 
 You can select and entire column or row by clicking on its letter or number respectively. To select everything, hit `Ctrl A`. To delete an entire column or row (not just empty the cells of data, but completely remove the cells), hit `Ctrl -`.
 
-![First things first!](/images/first-things.gif)
+![First things first!](images/first-things.gif)
 
 ## Using Basic Formulas and Functions
 
@@ -79,11 +79,11 @@ To use the value of a given cell in a formula, you reference it with the letter 
 
 If you have many rows of values in columns A and B, you may want to sum all of them. It would be madness to rewrite the preceding formula in every row. This is where relative references come in. You can easily expand this formula by clicking and dragging the bottom-right corner of the selected cell. Or you can expand all the way down column C, until your rows stop, by double-clicking the botoom-right corner of the selected cell. When you do this, Excel knows to change `=SUM(A1, B1)` into `=SUM(A2, B2)`, `=SUM(A3, B3)`, etc.
 
-![Expanding formulas with relative cell references.](/images/expand-formula.gif)
+![Expanding formulas with relative cell references.](images/expand-formula.gif)
 
 Excel's relative references make some tasks much easier, but can easily break others. Let's say you need to multiply every number in column A by the value of B1. With relative cell references, expanding your formula would fail. B1 would become B2, and the results wouldn't be what you wanted. To force Excel to use a specific, or *absolute*, cell, you can prefix the column or row with `$`. Excel will not automatically change the value after the `$` in a formula that is copied to other cells.
 
-![Using absolute cell references.](/images/absolute-reference.gif)
+![Using absolute cell references.](images/absolute-reference.gif)
 
 ## Organizing Messy Data
 
@@ -97,13 +97,13 @@ Let's work through the example of breaking out county and state names. You would
 
 First, you'll want to acknowledge that your data is [delimited][delimited], which means that there is a uniform system for separating the units of data in your set. (Your data *could* be fixed width, but this isn't very likely.) This could be spaces, commas, tabs, pipes, or any other kind of delimiter. Go to the next screen and specify which delimiter your data uses. If it's something weird and custom, you can specify that with `Other`. On the final screen, you can preview the new columns you're about to create and specify data formats. When you're ready, click `Finish` to create your new columns.
 
-![Text to Columns Example](/images/text-to-columns.gif)
+![Text to Columns Example](images/text-to-columns.gif)
 
 The observant among you will say, "Wait a minute! Now every state name has a space in front of it!" Yes, you're correct! Let's fix that.
 
 You can quickly remove the leading spaces from data with the `TRIM` function. In the next column, trim the first state name and then copy that function all the way down. Then just copy that corrected column, paste the values over the original, and delete your unnecessary column.
 
-![Trim](/images/trim.gif)
+![Trim](images/trim.gif)
 
 ### Number Formats to Enhance Presentation and Prevent Weird Errors
 
@@ -133,11 +133,11 @@ Some formats can cause problems when saving the underlying data. For example, th
 
 The order your data comes in is now always the order it needs to be in. Sorting is pretty straightforward: select your data, then go to `Data > Sort and Filter > Sort`. Here you can define your custom sorts. Your can define multiple levels of sorting. For example, if you wanted to sort county-level tax collections alphabetically by state and then by tax collections large-to-small, you could add a first sorting level of state, sorted A to Z by values, and a second level of tax collections, sorted largest to smallest by values. There are many ways you may want to sort data, and it's worth playing around with it.
 
-![Basic Sorting](/images/sorting.gif)
+![Basic Sorting](images/sorting.gif)
 
 Sometimes you'll have data where the columns are arranged in a way you don't want. In this case, you can also custom sort columns as well as rows. To do this, select the columns you want to sort and, in the sort menu, choose `Options > Sort left to right`.
 
-![Sorting by Rows](/images/sort-by-row.gif)
+![Sorting by Rows](images/sort-by-row.gif)
 
 ### Transposition to Flip Everything Around
 
@@ -147,7 +147,7 @@ You may get a dataset where you need to swap, or *transpose* the axes. This is p
 * Choose a location to paste the transposed data
 * Right-click into the desired first cell, choose `Paste Options > Transpose (T)`
 
-![Transposition example](/images/transpose.gif)
+![Transposition example](images/transpose.gif)
 
 ## Using Advanced Formulas
 
@@ -161,7 +161,7 @@ For example, let's say you have a table of state-level data where the states are
 
 #### Example Data
 
-![On the left, state-level data by FIPS code. On the right, state names by FIPS code.](/images/vlookup-data.png)
+![On the left, state-level data by FIPS code. On the right, state names by FIPS code.](images/vlookup-data.png)
 
 #### Writing Your VLOOKUP
 
@@ -174,7 +174,7 @@ The VLOOKUP formula has four parts:
 
 The final formula in our example might look like this:
 
-![VLOOKUP formula that gives us full state names for FIPS codes.](/images/vlookup-example.png)
+![VLOOKUP formula that gives us full state names for FIPS codes.](images/vlookup-example.png)
 
 Some important things to note:
 
@@ -184,7 +184,7 @@ Some important things to note:
 * The values we're searching through in the second table are sorted in ascending order, and the value we're looking for is in the first column. This is necessary with VLOOKUP.
 * The data we want to modify does not include the District of Columbia, but the FIPS reference table does. It's OK if something in the reference table doesn't have a match in the table where we're using VLOOKUP. The opposite situation--a value in our data that doesn't exist in the reference table--will throw the `#N/A` error.
 
-![VLOOKUP Demonstration](/images/vlookup-demo.gif)
+![VLOOKUP Demonstration](images/vlookup-demo.gif)
 
 ## Using IF and Other Logical Functions to Compare Data
 
@@ -267,7 +267,7 @@ PivotTables are a very cool Excel feature that allows you to create summary tabl
 2. Go to `Insert > Tables > PivotTable`
 3. By default, PivotTables are created on new worksheets. The default settings are usually fine, so go ahead and click `OK` to create your PivotTable.
 
-![Creating a PivotTable](/images/create-pivot-table.gif)
+![Creating a PivotTable](images/create-pivot-table.gif)
 
 ### Choosing What Your PivotTable Displays
 
@@ -277,13 +277,13 @@ By default, the number in Values will be a count summary. We don't need to know 
 
 There are many ways to summarize and format data values, and the correct one will vary from project to project. Don't be afraid to play around with it and see what you can do!
 
-![Choosing What the PivotTable Displays](/images/choose-pivot-values.gif)
+![Choosing What the PivotTable Displays](images/choose-pivot-values.gif)
 
 ### Filtering by Criteria
 
 Sometimes you'll want to filter the PivotTable results. You can easily do this by dragging-and-dropping the field you want to filter by into `FILTERS` in the PivotTable pane. This will add the field to a list of filters above the PivotTable, where you can fine-tune the criteria to filter by.
 
-![Filter by Criteria](/images/filter-pivot-table.gif)
+![Filter by Criteria](images/filter-pivot-table.gif)
 
 ## File > Save As
 
