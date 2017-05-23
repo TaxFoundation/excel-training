@@ -54,11 +54,11 @@ You can select and entire column or row by clicking on its letter or number resp
 
 | Formula | What It Returns |
 | --- | --- |
-| `=SUM(Value1, Value2, ...)` or `=Value1+Value2+...` | Returns the sum of cells, values, or ranges. |
-| `=Value1-Value2-...` | Returns the difference between cells or values. |
-| `=Value1*Value2*...` | Returns the product of cells or values. |
-| `=Value1/Value2/...` | Returns the quotient of cells or values. |
-| `=AVERAGE(Values)` | Average of the values, cells, or ranges passed. |
+| `=SUM(Value1, Value2, ...)` or `=Value1+Value2+...` | Returns the sum of cells, values, or ranges. [See documentation.][sum]|
+| `=Value1-Value2-...` | Returns the difference between cells or values. [See documentation.][subtract] |
+| `=Value1*Value2*...` | Returns the product of cells or values. [See documentation][basic-formula] |
+| `=Value1/Value2/...` | Returns the quotient of cells or values. [See documentation][basic-formula] |
+| `=AVERAGE(Values)` | Average of the values, cells, or ranges passed. [See documentation.][average] |
 | `=MEDIAN(Values)` | Returns the median of the values, cells, or ranges passed. |
 | `=MAX(Values)` | Maximum value of the values, cells, or ranges passed. |
 | `=MIN(Values)` | Minimum value of the values, cells, or ranges passed. |
@@ -317,6 +317,10 @@ Because saving as CSV means losing all of the special Excel magic in the file, E
 
 [excel-docs]: https://support.office.com/en-us/excel
 [tedium]: https://medium.com/backchannel/a-spreadsheet-way-of-knowledge-8de60af7146e
+[sum]: https://support.office.com/en-us/article/SUM-function-043e1c7d-7726-4e80-8f32-07b23e057f89
+[subtract]: https://support.office.com/en-us/article/Subtract-numbers-938b7912-5699-4609-969b-38b23ca00d54
+[basic-formula]: https://support.office.com/en-us/article/Use-Excel-as-your-calculator-a1abc057-ed11-443a-a635-68216555ad0a
+[average]: https://support.office.com/en-us/article/AVERAGE-function-047bac88-d466-426c-a32b-8f33eb960cf6
 [count]: https://support.office.com/en-us/article/COUNT-function-a59cd7fc-b623-4d93-87a4-d23bf411294c
 [counta]: https://support.office.com/en-us/article/COUNTA-function-7dc98875-d5c1-46f1-9a82-53f3219e2509?ui=en-US&rs=en-US&ad=US
 [delimited]: http://en.wikipedia.org/wiki/Delimiter-separated_values
