@@ -15,7 +15,7 @@ This training course is designed for incoming interns, but can serve as a handy 
   * [Transposition to Flip Everything Around](#transposition-to-flip-everything-around)
 * [Using Advanced Formulas](#using-advanced-formulas)
   * [Using VLOOKUP to Match Data from Different Tables](#using-vlookup-to-match-data-from-different-tables)
-  * [Using IF to Conditionally Generate Data](#using-if-statements-to-conditionally-generate-data)
+  * [Using IF, IFS, and Conditionals to Generate Data](#using-if-ifs-and-conditionals-to-generate-data)
 * [PivotTables to Summarize and Organize Data](#pivottables-to-summarize-and-organize-data)
   * [Create Your First PivotTable](#create-your-first-pivottable)
   * [Choosing What Your PivotTable Displays](#choosing-what-your-pivottable-displays)
@@ -184,7 +184,7 @@ Some important things to note:
 
 ![VLOOKUP Demonstration](/images/vlookup-demo.gif)
 
-## Using IF Statements to Conditionally Generate Data
+## Using IF, IFS, and Conditionals to Generate Data
 
 Using a formula like `IF` lets you introduce conditional logic into your data. Let's see an example:
 
@@ -192,11 +192,21 @@ Using a formula like `IF` lets you introduce conditional logic into your data. L
 
 In the above example, the formula checks cell A1 for the string "Super". If A1 equals "Super", then the formula displays "Duper". Otherwise, it displays the string "Fail".
 
+`IF` statements can be nested to create complex Excel formulas. For example
+
 Combining `IF` with `VLOOKUP` lets us do things like handle errors gracefully. As stated previously, if `VLOOKUP` doesn't find a match in the reference table, it will throw an error. Instead of seeing this error, we may want our dataset to use the string "No Data". To do this, we could write a function as follows:
 
 `=IF(ISNA(VLOOKUP(A1,Sheet2!A1:B3,2,FALSE),"No Data",VLOOKUP(A1,Sheet2!A1:B3,2,FALSE)))`
 
 This function would first see if the result of the `VLOOKUP` returns the `#N/A` error. If so, it returns the string "No Data". Otherwise, if the `VLOOKUP` is valid, it returns the result of the `VLOOKUP`.
+
+The `IFS` function works similarly to `IF`, but accepts multiple conditions and return values. For example:
+
+`=IFS(A1=1,"A1 is equal to one",B1=2,"B2 is equal to two",TRUE,"Default response")`
+
+`IFS` takes a series of statements to evaluate and values to return. The first statement to evaluate to `TRUE` will have its paired value returned, and no other statements will be evaluated. So in the example above, if cell `A1` has the value `1`, then the `IFS` function returns "A1 is equal to one". If `A1` is not `1`, but `B1` is `2`, then it returns "B2 is equal to two". And so on.
+
+When none of the statements in `IFS` evaluate to `TRUE`, it throws the `#N/A` error. To avoid this, you can add a statement/value pair at the end that serves as a default. In the example, `TRUE` always evaluates to `TRUE`, so "Default response" will always work if all other statements were `FALSE`.
 
 ## PivotTables to Summarize and Organize Data
 
