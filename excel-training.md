@@ -205,6 +205,28 @@ Combining `IF` with `VLOOKUP` lets us do things like handle errors gracefully. A
 
 This function would first see if the result of the `VLOOKUP` returns the `#N/A` error. If so, it returns the string "No Data". Otherwise, if the `VLOOKUP` is valid, it returns the result of the `VLOOKUP`.
 
+### AND and OR
+
+You can get `TRUE` and `FALSE` values from multiple condition evaluations by using the `AND` and `OR` functions.
+
+For `AND` to be `TRUE`, all comparisons in the function must individually evaluate as `TRUE`. For `OR` to be `TRUE`, *at least one* comparison in the functiion must individually evaluate as `TRUE`.
+
+For example, with the given data:
+
+|     | `A` | `B` |
+| --- | --- | --- |
+| `1` | 6   | 2   |
+| `2` | 5   | 12  |
+
+
+`=AND(A1>10,B1>10)` is `FALSE` and `=AND(A1>1,B2<10)` is `TRUE`
+
+`=OR(A1>10,B1>10)` is `FALSE` and `=OR(A1>1,A2>10)` is `TRUE`
+
+### NOT
+
+The `NOT` function is an easy way to reverse a boolen (`TRUE` or `FALSE`) value. So `=NOT(TRUE)` evaluates to `FALSE`. Or `=NOT(AND(1>2, 2>0))` evaluates to `TRUE`.
+
 ## PivotTables to Summarize and Organize Data
 
 PivotTables are a very cool Excel feature that allows you to create summary tables of your data. For example, let's say you have a dataset that lists tax collections at the county level and you want to know the sum of collections at the state level. You could devise a series of formulas to get this information, but it's much easier to quickly build a PivotTable. Let's dig into it!
