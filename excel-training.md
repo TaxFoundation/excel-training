@@ -1,6 +1,6 @@
 # Tax Foundation Excel Bootcamp
 
-This training course is designed for incoming interns, but can serve as a handy refresher for any person looking to up their Microsoft Excel game.
+This training course is designed for incoming interns, but can serve as a handy refresher for any person looking to up their Microsoft Excel game. For more and deeper info, check out [Microsoft's Excel help center](https://support.office.com/en-us/excel).
 
 ## Table of Contents
 
