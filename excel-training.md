@@ -6,7 +6,7 @@ This training course is designed for incoming interns, but can serve as a handy 
 
 * [What's the Goal of This Guide?](#what-s-the-goal-of-this-guide)
 * [Getting to Know Excel](#getting-to-know-excel)
-* [Using Basic Formulas](#using-basic-formulas)
+* [Using Basic Formulas and Functions](#using-basic-formulas-and-functions)
   * [Relative and Absolute References](#relative-and-absolute-references)
 * [Organizing Messy Data](#organizing-messy-data)
   * [Text to columns to Separate Conjoined Values](#text-to-columns-to-separate-conjoined-values)
@@ -48,7 +48,7 @@ You can select and entire column or row by clicking on its letter or number resp
 
 ![First things first!](/images/first-things.gif)
 
-## Using Basic Formulas
+## Using Basic Formulas and Functions
 
 [Once upon a time, spreadsheets were the most tedious thing in the world.](https://medium.com/backchannel/a-spreadsheet-way-of-knowledge-8de60af7146e) If you had rows and rows of data to add, you had to manually go through them and add the values. And if someone says, "Make a change to this data", you had to do it all again! Thankfully, Excel lets us write formulas that calculate for us and update based on changes to our data. Let's cover the basics.
 
@@ -62,6 +62,7 @@ You can select and entire column or row by clicking on its letter or number resp
 | `=MEDIAN(Values)` | Returns the median of the values, cells, or ranges passed. |
 | `=MAX(Values)` | Maximum value of the values, cells, or ranges passed. |
 | `=MIN(Values)` | Minimum value of the values, cells, or ranges passed. |
+| `=COUNT(Values)` | Returns the number of cells that are numbers within the cell range given. E.g., if `A1` is 4 and `A2` is "potato" and `A3` is empty, then `=COUNT(A1:A3)` returns 1. Number as text, e.g., `"1"`, also count. |
 | `=Value1&Value2` | Returns the concatenation of values, e.g., `="Fizz"&"Buzz"` returns "FizzBuzz". |
 
 There are four ways you might specify the values passed to an Excel function:
