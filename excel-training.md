@@ -13,6 +13,7 @@ This training course is designed for incoming interns, but can serve as a handy 
   * [Number Formats to Enhance Presentation and Prevent Weird Errors](#number-formats-to-enhance-presentation-and-prevent-weird-errors)
   * [Advanced Sorting to Arrange Things How You Want Them](#advanced-sorting-to-arrange-things-how-you-want-them)
   * [Transposition to Flip Everything Around](#transposition-to-flip-everything-around)
+  * [Text Functions to Find, Extract, and Manipulate Text](#text-functions-to-find-extract-and-manipulate-text)
 * [Using Advanced Formulas](#using-advanced-formulas)
   * [Using VLOOKUP to Match Data from Different Tables](#using-vlookup-to-match-data-from-different-tables)
   * [Using IF and Other Logical Functions to Compare Data](#using-if-and-other-logical-functions-to-compare-data)
@@ -149,15 +150,28 @@ You may get a dataset where you need to swap, or *transpose* the axes. This is p
 
 ![Transposition example](images/transpose.gif)
 
+## Text Functions to Find, Extract, and Manipulate Text
+
+You may have data that contains text which isn't quite ready for you to use. With Excel's [text functions][text-functions], you can work with this text to get it into the condition you require. A few handy examples:
+
+Function | Description | Example
+--- | --- | ---
+`SEARCH([Text to find], [Text to search])` | Returns the start position of text within text, or `#VALUE` error. Case insensitive. | `=SEARCH("a", "123abc")` returns 4.
+`LEN("Text")` | Returns the length of a piece of text. | `=LEN("Example")` returns 6.
+`LEFT("Text", Number)` | Returns the number of characters in a text starting from the left. (`RIGHT` is the same, but starts at the right side.) | `=LEFT("foobar", 3)` returns "foo".
+`SUBSTITUTE([Text to alter], [Old text], [New Text])` | Replaces a piece of text within a larger text with a substitution. (See also, `REPLACE`.) | `=SUBSTITUTE("foobar", "bar", "cat")` returns "foocat".
+`TEXT([Value to convert to text], [Optional format code])` | Converts a value, like a number, to text. | `=TEXT(1234,"0000000")` returns "0001234".
+`TRIM(" Text ")` | Remove all leading and trailing spaces from text. | `=TRIM("   stuff   ")` returns "stuff".
+
 ## Using Advanced Formulas
 
-Now that you've got the easy bits under your belt, let's make some *really* interesting formulas! Excel formulas allow for a lot of programmatic logic to make [data munging](https://en.wikipedia.org/wiki/Data_wrangling) much easier. Let's look at some of the most useful formulas.
+Now that you've got the easy bits under your belt, let's make some *really* interesting formulas! Excel formulas allow for a lot of programmatic logic to make [data munging][wrangling] much easier. Let's look at some of the most useful formulas.
 
 ### Using VLOOKUP to Match Data from Different Tables
 
 **VLOOKUP** is a useful function for finding a value from one table based on a value in another table.
 
-For example, let's say you have a table of state-level data where the states are identified by [FIPS code](https://www.census.gov/geo/reference/ansi_statetables.html). You want the data to be identified by the full state name instead. Luckily, you've got a table that matches FIPS codes to full state names. Should you use that table as a reference, manually replacing FIPS codes in your data set with state names? No, never! We'll use VLOOKUP to to match the full state name to the FIPS code.
+For example, let's say you have a table of state-level data where the states are identified by [FIPS code][fips]. You want the data to be identified by the full state name instead. Luckily, you've got a table that matches FIPS codes to full state names. Should you use that table as a reference, manually replacing FIPS codes in your data set with state names? No, never! We'll use VLOOKUP to to match the full state name to the FIPS code.
 
 #### Example Data
 
@@ -324,6 +338,9 @@ Because saving as CSV means losing all of the special Excel magic in the file, E
 [count]: https://support.office.com/en-us/article/COUNT-function-a59cd7fc-b623-4d93-87a4-d23bf411294c
 [counta]: https://support.office.com/en-us/article/COUNTA-function-7dc98875-d5c1-46f1-9a82-53f3219e2509?ui=en-US&rs=en-US&ad=US
 [delimited]: http://en.wikipedia.org/wiki/Delimiter-separated_values
+[text-functions]: https://support.office.com/en-us/article/Text-functions-reference-cccd86ad-547d-4ea9-a065-7bb697c2a56e?ui=en-US&rs=en-US&ad=US
+[wrangling]: https://en.wikipedia.org/wiki/Data_wrangling
+[fips]: https://www.census.gov/geo/reference/ansi_statetables.html
 [logical-functions]: https://support.office.com/en-us/article/Logical-functions-reference-e093c192-278b-43f6-8c3a-b6ce299931f5?ui=en-US&rs=en-US&ad=US
 [if]: https://support.office.com/en-us/article/IF-function-69aed7c9-4e8a-4755-a9bc-aa8bbff73be2?ui=en-US&rs=en-US&ad=US
 [countif]: https://support.office.com/en-us/article/COUNTIF-function-e0de10c6-f885-4e71-abb4-1f464816df34?ui=en-US&rs=en-US&ad=US
