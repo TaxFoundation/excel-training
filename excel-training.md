@@ -47,6 +47,8 @@ To change the contents of a selected cell, just start typing. If you're entering
 
 You can select and entire column or row by clicking on its letter or number respectively. To select everything, hit `Ctrl A`. To delete an entire column or row (not just empty the cells of data, but completely remove the cells), hit `Ctrl -`.
 
+You can copy individual cells or selections of cells with `Ctrl C` and paste them elsewhere with `Ctrl V`.
+
 ![First things first!](images/first-things.gif)
 
 ## Using Basic Formulas and Functions
